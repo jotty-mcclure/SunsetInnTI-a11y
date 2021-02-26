@@ -1,6 +1,6 @@
 {
   "name": "SunsetInnTI-a11y",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "dist/sunsetinn-a11y-patcher.min.js",
   "license": "MIT",
   "scripts": {
@@ -8,6 +8,9 @@
     "build": "webpack --config webpack.prod.js"
   },
   "devDependencies": {
+    "@babel/core": "^7.13.1",
+    "@babel/preset-env": "^7.13.5",
+    "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^3.0.0",
     "webpack": "^5.24.2",
     "webpack-cli": "^4.5.0",
