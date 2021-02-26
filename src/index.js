@@ -8,16 +8,14 @@ import contact from './contact';
 import map from './map';
 import faq from './faq';
 
-styles();
-initGlobal();
-home();
-wedding_and_events();
-attractions();
-blog();
-contact();
-map();
-faq();
-
-// document.addEventListener('DOMContentLoaded', (event) => {
-	
-// });
+document.addEventListener('DOMContentLoaded', (event) => {
+	styles();
+	initGlobal();
+	home();
+	wedding_and_events();
+	attractions();
+	blog();
+	contact();
+	map();
+	faq();
+});
