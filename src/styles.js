@@ -72,5 +72,9 @@ export default () => {
 		#about__page > section.calltoAction > div > div > div > h2 {
 			color: #000;
 		}
+
+		#rooms-1__page > section.section__availability > div > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(3) {
+			display: none;
+		}
 	`;
 }
