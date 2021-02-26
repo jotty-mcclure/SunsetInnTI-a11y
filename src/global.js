@@ -24,4 +24,14 @@ export default () => {
 
 	const lightbox = document.querySelector('div#lightbox');
 	if (lightbox) lightbox.setAttribute('id', 'lightbox-1');
+
+	const footer__copyright = document.querySelector('#table2-td1 > footer > div > div.footer__copyright > div > div');
+	if (footer__copyright) {
+		const a11yBookMessage = document.createElement('p');
+		a11yBookMessage.innerText = 'If you are disabled and need assistance in using our services, or obtaining information you need about our services, please call us at 1-727-420-8788 and we will be happy to assist you.';
+		a11yBookMessage.setAttribute('id', 'a11y-assistance-message');
+		footer__copyright.appendChild(a11yBookMessage);
+	}
+
+	
 }
