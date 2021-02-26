@@ -7,6 +7,8 @@ import styles from './styles';
 import contact from './contact';
 import map from './map';
 import faq from './faq';
+import search from './search';
+import property from './property';
 
 document.addEventListener('DOMContentLoaded', (event) => {
 	styles();
@@ -18,4 +20,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 	contact();
 	map();
 	faq();
+	search();
+	property();
 });
