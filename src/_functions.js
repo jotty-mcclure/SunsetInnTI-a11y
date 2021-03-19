@@ -17,7 +17,14 @@ const swapTag = (selector, newTag) => {
 	}
 }
 
+// coppied from https://stackoverflow.com/a/21696585
+function isHidden(el) {
+    var style = window.getComputedStyle(el);
+    return (style.display === 'none')
+}
+
 export {
 	setAttribute,
 	swapTag,
+	isHidden,
 };
