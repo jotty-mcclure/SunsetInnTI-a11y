@@ -10,7 +10,7 @@ import faq from './faq';
 import search from './search';
 import property from './property';
 
-// document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', (event) => {
 	styles();
 	initGlobal();
 	home();
@@ -22,4 +22,4 @@ import property from './property';
 	faq();
 	search();
 	property();
-// });
+});

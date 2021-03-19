@@ -32,6 +32,5 @@ export default () => {
 		a11yBookMessage.setAttribute('id', 'a11y-assistance-message');
 		footer__copyright.appendChild(a11yBookMessage);
 	}
-
 	
 }
