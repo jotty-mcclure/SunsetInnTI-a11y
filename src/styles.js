@@ -173,5 +173,9 @@ export default () => {
 		#about__page a {
 			color: blue;
 		}
+
+		#ciirusBody section.section__home {
+			height: auto;
+		}
 	`;
 }

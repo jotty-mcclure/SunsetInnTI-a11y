@@ -62,5 +62,15 @@ export default () => {
 			}
 		});
 		observer.observe(dp, { attributes: true, childList: false, subtree: false });
+
+		setAttribute('#content_descriptions1_GuestReviews1_btnSubmitReview', 'role', 'button');
+
+		// Star rating
+		
+		setAttribute('#content_descriptions1_GuestReviews1_txtStarRating > a:nth-child(2)', 'title', 'one star rating');
+		setAttribute('#content_descriptions1_GuestReviews1_txtStarRating > a:nth-child(3)', 'title', 'two star rating');
+		setAttribute('#content_descriptions1_GuestReviews1_txtStarRating > a:nth-child(4)', 'title', 'three star rating');
+		setAttribute('#content_descriptions1_GuestReviews1_txtStarRating > a:nth-child(5)', 'title', 'four star rating');
+		setAttribute('#content_descriptions1_GuestReviews1_txtStarRating > a:nth-child(6)', 'title', 'five star rating');
 	}
 }

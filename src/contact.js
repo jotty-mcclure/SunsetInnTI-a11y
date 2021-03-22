@@ -1,4 +1,4 @@
-import { setAttribute, swapTag } from './_functions';
+import { setAttribute, removeAttribute } from './_functions';
 
 export default () => {
 	if ( window.location.pathname === '/contactus.aspx' ) {
@@ -12,5 +12,12 @@ export default () => {
 		setAttribute('#content_contact1_cmbPartySize_I', 'aria-label', 'Number of people in your group');
 		setAttribute('#content_contact1_cmbLocation_I', 'aria-label', 'Where are you from?');
 		setAttribute('#content_contact1_txtComments_I', 'aria-label', 'Any other comments');
+
+		setAttribute('#content_contact1_txtName_I', 'aria-required', 'true');
+		setAttribute('#content_contact1_txtEmail_I', 'aria-required', 'true');
+		setAttribute('#content_contact1_btnSubmit', 'role', 'button');
+
+		removeAttribute('#content_contact1_dteArrive_I, #content_contact1_dteDepart_I', 'readonly');
+		
 	}
 }
