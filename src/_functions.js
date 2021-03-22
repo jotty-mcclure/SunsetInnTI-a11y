@@ -5,6 +5,13 @@ const setAttribute = (selector, attr, value) => {
 	}
 }
 
+const removeAttribute = (selector, attr) => {
+	const elms = document.querySelectorAll(selector);
+	if ( elms.length ) {
+		elms.forEach(elm => elm.removeAttribute(attr));
+	}
+}
+
 const swapTag = (selector, newTag) => {
 	const elms = document.querySelectorAll(selector);
 
@@ -23,8 +30,18 @@ function isHidden(el) {
     return (style.display === 'none')
 }
 
+function remove(selector) {
+	const elms = document.querySelectorAll(selector);
+
+	if ( elms.length ) {
+		elms.forEach(elm => elm.remove());
+	}
+}
+
 export {
 	setAttribute,
+	removeAttribute,
 	swapTag,
 	isHidden,
+	remove,
 };

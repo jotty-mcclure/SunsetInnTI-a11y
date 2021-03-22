@@ -1,4 +1,4 @@
-import { setAttribute } from './_functions';
+import { setAttribute, isHidden } from './_functions';
 
 export default () => {
 	// document
@@ -13,7 +13,7 @@ export default () => {
 	setAttribute('.navbar-brand > .img-responsive', 'alt', 'Sunset Inn and Cottages');
 
 	// iframe
-	setAttribute('#iFrameResizer0', 'aria-hidden', 'true');
+	setTimeout(() => setAttribute('#iFrameResizer0', 'aria-hidden', 'true'), 1000);
 
 	setAttribute('#innerpagecontent', 'role', 'main');
 
@@ -33,4 +33,37 @@ export default () => {
 		footer__copyright.appendChild(a11yBookMessage);
 	}
 	
+	// Banner fixes
+	setAttribute('#dropdownMenu1', 'aria-label', 'Language selection');
+	const searchForm = document.querySelector('.section__info div.search-form.propCodeWrapper');
+	if ( searchForm ) searchForm.remove();
+
+	const langMenu = document.querySelector('#ciirusBody .section__info .section_info__body .info__column-right .lang-menu');
+	const observer = new MutationObserver((mutationsList) => {
+		const elm = mutationsList[mutationsList.length - 1].target;
+
+		if ( !isHidden(elm) ) {
+			setAttribute('.lang-menu ul > li > a', 'tabindex', '0');
+			elm.querySelector('ul > li:first-child > a').focus();
+		}
+	});
+	observer.observe(langMenu, { attributes: true, childList: false, subtree: false });
+
+	setAttribute('#ciirusBody .section__info .section_info__body div.info__column-left > div > p > a > img', 'role', 'presentation');
+
+	// Menu
+	const mainMenu = document.querySelector('nav.navbar ul.nav.navbar-nav.navbar-right > li.dropdown');
+	setAttribute('nav.navbar ul.nav.navbar-nav.navbar-right > li.dropdown ul li a', 'tabindex', '0');
+	const mainMenuObserver = new MutationObserver((mutationsList) => {
+		const elm = mutationsList[mutationsList.length - 1].target;
+		const isOpen = elm.className.includes('open');
+
+		if ( isOpen ) {
+			elm.querySelector('ul.nav.navbar-nav.navbar-right > li.dropdown ul li:first-child a').focus();
+		}
+	});
+	mainMenuObserver.observe(mainMenu, { attributes: true, childList: false, subtree: false });
+
+	setAttribute('footer p.newsletter__subtitle','id','newsletter__subtitle');
+	setAttribute('input#SubscribeEmail','aria-labelledby','newsletter__subtitle');
 }
