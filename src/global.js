@@ -39,15 +39,17 @@ export default () => {
 	if ( searchForm ) searchForm.remove();
 
 	const langMenu = document.querySelector('#ciirusBody .section__info .section_info__body .info__column-right .lang-menu');
-	const observer = new MutationObserver((mutationsList) => {
-		const elm = mutationsList[mutationsList.length - 1].target;
-
-		if ( !isHidden(elm) ) {
-			setAttribute('.lang-menu ul > li > a', 'tabindex', '0');
-			elm.querySelector('ul > li:first-child > a').focus();
-		}
-	});
-	observer.observe(langMenu, { attributes: true, childList: false, subtree: false });
+	if ( langMenu ) {
+		const observer = new MutationObserver((mutationsList) => {
+			const elm = mutationsList[mutationsList.length - 1].target;
+	
+			if ( !isHidden(elm) ) {
+				setAttribute('.lang-menu ul > li > a', 'tabindex', '0');
+				elm.querySelector('ul > li:first-child > a').focus();
+			}
+		});
+		observer.observe(langMenu, { attributes: true, childList: false, subtree: false });
+	}
 
 	setAttribute('#ciirusBody .section__info .section_info__body div.info__column-left > div > p > a > img', 'role', 'presentation');
 
