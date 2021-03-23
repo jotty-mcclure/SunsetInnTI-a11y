@@ -38,10 +38,19 @@ function remove(selector) {
 	}
 }
 
+function insert(selector, position='afterend', html) {
+	const elm = document.querySelector(selector);
+
+	if ( elm ) {
+		elm.insertAdjacentHTML(position, html);
+	}
+}
+
 export {
 	setAttribute,
 	removeAttribute,
 	swapTag,
 	isHidden,
 	remove,
+	insert,
 };
