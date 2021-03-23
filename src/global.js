@@ -56,15 +56,18 @@ export default () => {
 	// Menu
 	const mainMenu = document.querySelector('nav.navbar ul.nav.navbar-nav.navbar-right > li.dropdown');
 	setAttribute('nav.navbar ul.nav.navbar-nav.navbar-right > li.dropdown ul li a', 'tabindex', '0');
-	const mainMenuObserver = new MutationObserver((mutationsList) => {
-		const elm = mutationsList[mutationsList.length - 1].target;
-		const isOpen = elm.className.includes('open');
 
-		if ( isOpen ) {
-			elm.querySelector('ul.nav.navbar-nav.navbar-right > li.dropdown ul li:first-child a').focus();
-		}
-	});
-	mainMenuObserver.observe(mainMenu, { attributes: true, childList: false, subtree: false });
+	if ( mainMenu ) {
+		const mainMenuObserver = new MutationObserver((mutationsList) => {
+			const elm = mutationsList[mutationsList.length - 1].target;
+			const isOpen = elm.className.includes('open');
+	
+			if ( isOpen ) {
+				elm.querySelector('ul.nav.navbar-nav.navbar-right > li.dropdown ul li:first-child a').focus();
+			}
+		});
+		mainMenuObserver.observe(mainMenu, { attributes: true, childList: false, subtree: false });
+	}
 
 	setAttribute('footer p.newsletter__subtitle','id','newsletter__subtitle');
 	setAttribute('input#SubscribeEmail','aria-labelledby','newsletter__subtitle');
