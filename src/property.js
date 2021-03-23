@@ -51,15 +51,18 @@ export default () => {
 		setAttribute('.ui-datepicker-year', 'aria-label', 'select year');
 
 		const dp = document.querySelector('#ui-datepicker-div');
-		const observer = new MutationObserver((mutationsList, observer) => {
-			const elm = mutationsList[mutationsList.length - 1].target;
 
-			if ( !isHidden(elm) ) {
-				setAttribute('.ui-datepicker-month', 'aria-label', 'select month');
-				setAttribute('.ui-datepicker-year', 'aria-label', 'select year');
-			}
-		});
-		observer.observe(dp, { attributes: true, childList: false, subtree: false });
+		if ( dp ) {
+			const observer = new MutationObserver((mutationsList, observer) => {
+				const elm = mutationsList[mutationsList.length - 1].target;
+	
+				if ( !isHidden(elm) ) {
+					setAttribute('.ui-datepicker-month', 'aria-label', 'select month');
+					setAttribute('.ui-datepicker-year', 'aria-label', 'select year');
+				}
+			});
+			observer.observe(dp, { attributes: true, childList: false, subtree: false });
+		}
 
 		setAttribute('#content_descriptions1_GuestReviews1_btnSubmitReview', 'role', 'button');
 
