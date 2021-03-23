@@ -1,4 +1,4 @@
-import { setAttribute, swapTag, isHidden } from './_functions';
+import { setAttribute, swapTag, isHidden, insert } from './_functions';
 import propertyDetails from './_propertyDetails';
 
 const insertPropDetails = (id) => {
@@ -19,10 +19,8 @@ const insertPropDetails = (id) => {
 		<p>The ${name} is not wheelchair accessible.</p>
 		
 		<p>This property was built prior to the enactment of the Americans With Disabilities Act.  Unfortunately, none of the bathrooms are wheelchair accessible and it is not readily achievable to modify them to make them larger.  We apologize for any inconvenience.  If there is anything we can do to accommodate you during your stay, please let us know.</p>`;
-		
-		document
-			.querySelector('div.room__desc')
-			.insertAdjacentHTML('afterend', message);
+
+		insert('div.room__desc', 'afterend', message);
 	}
 }
 

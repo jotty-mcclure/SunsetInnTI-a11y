@@ -1,17 +1,18 @@
-import { setAttribute, swapTag, remove } from './_functions';
+import { setAttribute, swapTag, remove, insert } from './_functions';
 
 export default () => {
 	if ( window.location.pathname === '/index.aspx' || window.location.pathname === '/' ) {
 		// Carousel - remove this thing... it is unneededd.
 		// setAttribute('.carousel-inner', 'aria-label', 'a photo slideshow of Sunset Inn');
 		// setAttribute('.carousel-inner > div', 'role', 'option');
-		document
-			.querySelector('section#section__home > #carousel-example-generic')
-			.insertAdjacentHTML(
-				'afterend', 
+		setTimeout(() => {
+			insert(
+				'section#section__home > #carousel-example-generic',
+				'afterend',
 				`<img alt="Sunset Inn &amp; Cottages" style="width:100%" src="https://cdn.ciirus.com/WebTemplates/51367/assets/img/slides/home-bg2.jpg" role="presentation" />`
 			);
-		remove('section#section__home > #carousel-example-generic');
+			remove('section#section__home > #carousel-example-generic');
+		}, 250);
 
 		// Images
 		setAttribute('.about__pic > .img-responsive', 'alt', 'A look inside of the cottage shows a red couch with side tables and lamps. The space is comfortable and cozy.');
