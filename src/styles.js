@@ -137,8 +137,10 @@ export default () => {
 		}
 
 		#ciirusBody .section__availability .reservation__form>.form-group>.form-group__inner>label, 
-		#ciirusBody .section__availability .reservation__button .btn{
-			color: #000;
+		#ciirusBody .section__availability .reservation__button .btn,
+		button#book,
+		button.res-btn.btn {
+			color: #000 !important;
 		}
 
 		#ciirusBody .section__best-rooms .best-rooms__content .best-rooms__item figcaption>h3,
@@ -176,6 +178,13 @@ export default () => {
 
 		#ciirusBody section.section__home {
 			height: auto;
+		}
+
+		#reservationform2 > p.quote-title,
+		#reservationform3 > p.quote-title {
+			font-size: 18px;
+			font-weight: bold;
+			border-bottom: 1px solid;
 		}
 	`;
 }

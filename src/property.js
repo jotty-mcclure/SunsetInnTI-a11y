@@ -1,4 +1,4 @@
-import { setAttribute, swapTag, isHidden, insert } from './_functions';
+import { setAttribute, swapTag, isHidden, insert, remove } from './_functions';
 import propertyDetails from './_propertyDetails';
 
 const insertPropDetails = (id) => {
@@ -18,7 +18,11 @@ const insertPropDetails = (id) => {
 	
 		<p>The ${name} is not wheelchair accessible.</p>
 		
-		<p>This property was built prior to the enactment of the Americans With Disabilities Act.  Unfortunately, none of the bathrooms are wheelchair accessible and it is not readily achievable to modify them to make them larger.  We apologize for any inconvenience.  If there is anything we can do to accommodate you during your stay, please let us know.</p>`;
+		<p>This property was built prior to the enactment of the Americans With Disabilities Act.  Unfortunately, none of the bathrooms are wheelchair accessible and it is not readily achievable to modify them to make them larger.  We apologize for any inconvenience. If there is anything we can do to accommodate you during your stay, please let us know.</p>
+		
+		<p>Please be aware that no reservation is final until it has been confirmed by the hotel.</p>
+		
+		<p>Only hotel guests with a confirmed reservation are allowed to enter the property.</p>`;
 
 		insert('div.room__desc', 'afterend', message);
 	}
@@ -67,11 +71,24 @@ export default () => {
 		setAttribute('#content_descriptions1_GuestReviews1_btnSubmitReview', 'role', 'button');
 
 		// Star rating
-		
 		setAttribute('#content_descriptions1_GuestReviews1_txtStarRating > a:nth-child(2)', 'title', 'one star rating');
 		setAttribute('#content_descriptions1_GuestReviews1_txtStarRating > a:nth-child(3)', 'title', 'two star rating');
 		setAttribute('#content_descriptions1_GuestReviews1_txtStarRating > a:nth-child(4)', 'title', 'three star rating');
 		setAttribute('#content_descriptions1_GuestReviews1_txtStarRating > a:nth-child(5)', 'title', 'four star rating');
 		setAttribute('#content_descriptions1_GuestReviews1_txtStarRating > a:nth-child(6)', 'title', 'five star rating');
+
+		// Book widget
+		setAttribute('#DateFrom', 'placeholder', 'Arrival date');
+		setAttribute('#DateFrom', 'aria-label', 'Arrival date - MM/DD/YYYY');
+		setAttribute('#DateFrom', 'autocomplete', 'off');
+
+		setAttribute('#DateTo', 'placeholder', 'Departure date');
+		setAttribute('#DateTo', 'aria-label', 'Departure date - MM/DD/YYYY');
+		setAttribute('#DateTo', 'autocomplete', 'off');
+
+		swapTag('#reservationform2 > a,#reservationform3 > a', 'p');
+		setAttribute('#reservationform2 > p,#reservationform3 > p', 'class', 'quote-title');
+
+		remove('#book');
 	}
 }
