@@ -186,5 +186,9 @@ export default () => {
 			font-weight: bold;
 			border-bottom: 1px solid;
 		}
+
+		.black {
+			color: #000!important;
+		}
 	`;
 }

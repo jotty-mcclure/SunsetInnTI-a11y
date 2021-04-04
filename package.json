@@ -1,6 +1,6 @@
 {
   "name": "SunsetInnTI-a11y",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "main": "dist/sunsetinn-a11y-patcher.min.js",
   "license": "MIT",
   "scripts": {

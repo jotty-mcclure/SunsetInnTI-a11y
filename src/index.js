@@ -9,6 +9,7 @@ import map from './map';
 import faq from './faq';
 import search from './search';
 import property from './property';
+import book from './book';
 
 document.addEventListener('DOMContentLoaded', (event) => {
 	styles();
@@ -22,4 +23,5 @@ document.addEventListener('DOMContentLoaded', (event) => {
 	faq();
 	search();
 	property();
+	book();
 });
