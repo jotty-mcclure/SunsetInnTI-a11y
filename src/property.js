@@ -89,6 +89,6 @@ export default () => {
 		swapTag('#reservationform2 > a,#reservationform3 > a', 'p');
 		setAttribute('#reservationform2 > p,#reservationform3 > p', 'class', 'quote-title');
 
-		remove('#book');
+		// remove('#book');
 	}
 }
